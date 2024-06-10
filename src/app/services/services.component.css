@@ -1,0 +1,36 @@
+/* services.component.css */
+.container {
+    padding: 20px;
+}
+
+.page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.service-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.service-icon {
+    /* Style your service icon/image here */
+}
+
+.service-details {
+    margin-left: 20px;
+}
+
+.service-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.service-description {
+    font-size: 16px;
+    color: #666;
+}

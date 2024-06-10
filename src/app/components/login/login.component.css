@@ -1,0 +1,9 @@
+body {
+    background-color: #36362f !important; /* Set background color of the entire page */
+}
+
+/* Add this to ensure the components are positioned correctly */
+app-navbar, app-footer {
+    position: relative;
+    z-index: 1; /* Ensure they are above the background */
+}

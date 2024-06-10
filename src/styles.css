@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Cream beige background color */
+.bg-beige {
+  background-color: #f5f5f0;
+}
+
+/* Coco Gothic font */
+@font-face {
+  font-family: 'Coco Gothic';
+  src: url('src/assets/fonts/coco-gothic-family/coco-gothic.bold.ttf') format('truetype');
+}
+.font-coco-gothic {
+  font-family: 'Coco Gothic', sans-serif;
+}

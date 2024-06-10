@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Page</title>
+  <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      display: flex;
+      gap: 10px;
+    }
+
+    .tab button {
+      background-color: #f0f0f0;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .tab button.active {
+      background-color: #e0e0e0;
+    }
+
+    .logout-button {
+      background-color: #ff4d4d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .logout-button:hover {
+      background-color: #cc0000;
+    }
+
+    .content {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .grid-item {
+      background-color: #ffffff;
+      border: 1px solid #dddddd;
+      border-radius: 5px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .grid-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid-item img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .grid-item h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .grid-item p {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1 class="text-2xl font-bold">Paiement de facture</h1>
+  <br>
+  <div class="header">
+    <div class="tab">
+      <button class="tablinks active">Liste des créanciers</button>
+      <button class="tablinks">Historique</button>
+    </div>
+    <button class="logout-button" (click)="logout()">Logout</button>
+  </div>
+  <div class="content">
+    <select>
+      <option value="all">Toutes les catégories</option>
+    </select>
+    <div class="grid-container">
+      <a [routerLink]="'/effectuer-paiement/' + 'iam-recharges'" class="grid-item">
+        <img src="https://www.iam.ma/ImagesMarocTelecom/Phototh%C3%A8que/Images-grandes/maroc-telecom-blanc-ar-grande.jpg" alt="Maroc Telecom">
+        <div>
+          <h2>IAM RECHARGES</h2>
+          <p>TÉLÉPHONIE ET INTERNET SIM</p>
+        </div>
+      </a>
+      <a [routerLink]="'/effectuer-paiement/' + 'iam-factures'" class="grid-item">
+        <img src="https://www.iam.ma/ImagesMarocTelecom/Phototh%C3%A8que/Images-grandes/maroc-telecom-blanc-ar-grande.jpg" alt="Maroc Telecom">
+        <div>
+          <h2>IAM FACTURES</h2>
+          <p>PRODUIT INTERNET SIM</p>
+          <p>PRODUIT FIXE SIM</p>
+          <p>PRODUIT MOBILE SIM</p>
+        </div>
+      </a>
+      <a [routerLink]="'/effectuer-paiement/' + 'redal'" class="grid-item">
+        <img src="https://media.licdn.com/dms/image/C511BAQFD_MZ6Chc1QQ/company-background_1536_768/0/1584028354410?e=2147483647&v=beta&t=gvvf396mzkaHgH7xzYheZrBPrkBNxGfgLSjZQ1w0UkQ" alt="Redal">
+        <div>
+          <h2>REDAL</h2>
+          <p>FACTURES REDAL</p>
+        </div>
+      </a>
+      <a [routerLink]="'/effectuer-paiement/' + 'amendis-tanger'" class="grid-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIm3XBL01OW3dxqviMt3clLQdZq_p4-YqoG6YPP38HGA&s" alt="Amendis Tanger">
+        <div>
+          <h2>AMENDIS TANGER</h2>
+          <p>FACTURES AMENDIS TANGER</p>
+        </div>
+      </a>
+      <a [routerLink]="'/effectuer-paiement/' + 'amendis-tetouan'" class="grid-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIm3XBL01OW3dxqviMt3clLQdZq_p4-YqoG6YPP38HGA&s" alt="Amendis Tetouan">
+        <div>
+          <h2>AMENDIS TETOUAN</h2>
+          <p>FACTURES AMENDIS TETOUAN</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

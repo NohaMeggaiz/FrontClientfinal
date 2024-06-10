@@ -1,0 +1,63 @@
+.about-us-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.about-us-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* Space between the image and the heading */
+}
+
+.about-us-container h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-us-container p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+/******/
+
+/* Navbar Container */
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* Align items to the start and end of the container */
+    align-items: center; /* Vertically center items */
+    padding: 0 20px; /* Add padding to the left and right */
+    background-color: #1976D2; /* Set background color */
+    color: white; /* Set text color */
+  }
+  
+  /* Logo */
+  .logo {
+    height: 40px; /* Adjust height as needed */
+    width: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Navigation Buttons Container */
+  .nav-buttons {
+    display: flex; /* Arrange buttons in a row */
+    gap: 20px; /* Add space between buttons */
+  }
+  
+  /* Navigation Button */
+  .nav-button {
+    padding: 10px 20px; /* Add padding to buttons */
+    border: none;
+    border-radius: 5px;
+    background-color: transparent; /* Make button background transparent */
+    color: white; /* Set text color */
+    font-size: 16px; /* Adjust font size */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease; /* Add smooth transition */
+  }
+  
+  .nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Add hover effect */
+  }
+  

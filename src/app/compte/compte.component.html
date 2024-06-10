@@ -1,0 +1,21 @@
+<app-nav-client></app-nav-client>
+<div *ngIf="clientData">
+  <h3>Client Information</h3>
+  <p><strong>ID:</strong> {{ clientData.id_client }}</p>
+  <p><strong>Username:</strong> {{ clientData.nom }}</p>
+  <p><strong>Email:</strong> {{ clientData.email }}</p>
+  <p><strong>Roles:</strong> {{ clientData.prenom }}</p>
+  <!-- Add more fields as necessary -->
+</div>
+
+<button type="button" (click)="toggleChangePassword()" class="profile-button">Changer Mot de Passe</button>
+<!-- Formulaire pour changer le mot de passe -->
+<form *ngIf="changePasswordVisible" (ngSubmit)="changePassword()" class="profile-form">
+  <div>
+    <label for="newPassword" class="profile-label">Nouveau Mot de Passe:</label>
+    <input type="password" id="newPassword" [(ngModel)]="newPassword" name="newPassword" required class="profile-input">
+  </div>
+  <button type="submit" class="profile-button">Valider</button>
+</form>
+<div *ngIf="changePasswordSuccessMessage" class="success-message">{{ changePasswordSuccessMessage }}</div>
+<div *ngIf="changePasswordErrorMessage" class="error-message">{{ changePasswordErrorMessage }}</div>
