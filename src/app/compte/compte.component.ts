@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LoginService } from '../Service/login.service';
 
 @Component({
@@ -6,10 +6,14 @@ import { LoginService } from '../Service/login.service';
   templateUrl: './compte.component.html',
   styleUrls: ['./compte.component.css']
 })
-export class CompteComponent implements OnInit {
+export class CompteComponent {
   clientData: any;
   changePasswordVisible: boolean = false;
   newPassword: string = '';
+  newPasswordFieldType: string = 'password';
+
+  transactions: any[] = []; // Define an array to hold transactions
+
 
   changePasswordSuccessMessage: string = '';
   changePasswordErrorMessage: string = '';
@@ -20,6 +24,8 @@ export class CompteComponent implements OnInit {
     this.loginService.getCurrentClient().subscribe({
       next: (data: any) => {
         this.clientData = data; // Store the client data
+        this.transactions = data.transactions; // Extract transactions array
+
         console.log('Current client data:', this.clientData);
       },
       error: (err: any) => {
@@ -27,6 +33,10 @@ export class CompteComponent implements OnInit {
       }
     });
   }
+  toggleNewPasswordVisibility() {
+    this.newPasswordFieldType = this.newPasswordFieldType === 'password' ? 'text' : 'password';
+  }
+
 
   toggleChangePassword(): void {
     this.changePasswordVisible = !this.changePasswordVisible;
@@ -48,4 +58,5 @@ export class CompteComponent implements OnInit {
       }
     });
   }
+
 }

@@ -7,15 +7,53 @@
   <p><strong>Roles:</strong> {{ clientData.prenom }}</p>
   <!-- Add more fields as necessary -->
 </div>
-
 <button type="button" (click)="toggleChangePassword()" class="profile-button">Changer Mot de Passe</button>
+
 <!-- Formulaire pour changer le mot de passe -->
 <form *ngIf="changePasswordVisible" (ngSubmit)="changePassword()" class="profile-form">
-  <div>
-    <label for="newPassword" class="profile-label">Nouveau Mot de Passe:</label>
-    <input type="password" id="newPassword" [(ngModel)]="newPassword" name="newPassword" required class="profile-input">
+  <div class="input-container">
+    <label class="form-label" for="newPassword">Nouveau Mot de Passe:</label>
+    <input
+      [type]="newPasswordFieldType"
+      id="newPassword"
+      [(ngModel)]="newPassword"
+      #NewPassword="ngModel"
+      name="newPassword"
+      placeholder="Nouveau Mot de Passe"
+      required
+      minlength="8"
+      class="profile-input"
+    />
+    <div class="toggle-password" (click)="toggleNewPasswordVisibility()">
+      <i class="fas" [class.fa-eye]="newPasswordFieldType === 'password'" [class.fa-check]="newPasswordFieldType !== 'password'"></i>
+      <span *ngIf="newPasswordFieldType === 'password'">Show Password</span>
+      <span *ngIf="newPasswordFieldType !== 'password'">Hide Password</span>
+    </div>
+    <div class="alert" [class.active]="NewPassword.touched && NewPassword.invalid">
+      <span *ngIf="NewPassword.errors && NewPassword.errors['required']">You must provide information for this field.</span>
+      <span *ngIf="NewPassword.errors && NewPassword.errors['minlength']">Your password should be at least 8 characters long and include numbers.</span>
+    </div>
   </div>
   <button type="submit" class="profile-button">Valider</button>
 </form>
+
 <div *ngIf="changePasswordSuccessMessage" class="success-message">{{ changePasswordSuccessMessage }}</div>
 <div *ngIf="changePasswordErrorMessage" class="error-message">{{ changePasswordErrorMessage }}</div>
+<br/>
+
+<table>
+  <thead>
+    <tr>
+      <th>Transaction ID</th>
+      <th>Amount</th>
+      <!-- Add more headers if needed -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transaction of transactions">
+      <td>{{ transaction.id_transaction }}</td>
+      <td>{{ transaction.montant }}</td>
+      <!-- Display other transaction details as needed -->
+    </tr>
+  </tbody>
+</table>
