@@ -10,7 +10,7 @@ import { TransactionRequest } from '../models/TransactionRequest';
 export class PayementService {
 
 
-  private apiUrl = 'http://localhost:8090/transactions/make'; // Update this URL to your actual endpoint
+  private apiUrl = 'https://lbackend-jibi.onrender.com/transactions/make'; // Update this URL to your actual endpoint
 
   constructor(private http: HttpClient,private loginService: LoginService,
   ) { }
@@ -21,7 +21,7 @@ export class PayementService {
     return this.http.post<TransactionRequest>(this.apiUrl, request);
   }
 
-  private baseUrl = 'http://localhost:8090/api';
+  private baseUrl = 'https://lbackend-jibi.onrender.com/api';
 
  
 

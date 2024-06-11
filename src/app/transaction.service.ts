@@ -22,7 +22,7 @@ interface TransactionResponse {
 })
 export class TransactionService {
 
-  private apiUrl = "http://localhost:8090/transactions"
+  private apiUrl = "https://lbackend-jibi.onrender.com/transactions"
 
   constructor(private http: HttpClient) { }
 

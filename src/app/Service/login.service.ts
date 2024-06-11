@@ -4,12 +4,12 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
 
-const AUTH_API = 'http://localhost:8090/api/auth/';
-const ClientURL = 'http://localhost:8090/api/';
+const AUTH_API = 'https://lbackend-jibi.onrender.com/api/auth/';
+const ClientURL = 'https://lbackend-jibi.onrender.com/api/';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-const changePasswordUrl = 'http://localhost:8090/api/changePassword';
+const changePasswordUrl = 'https://lbackend-jibi.onrender.com/api/changePassword';
 
 @Injectable({
   providedIn: 'root'
